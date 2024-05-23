@@ -1,0 +1,18 @@
+services:
+  #new app (angular_app)
+  angular_app:
+    container_name: angular_app
+    image: demo-pokedex_app:1.0.0
+    build: ./front/PokedexApp
+    ports:
+      - 4200:4200
+    depends_on:
+      - java_app
+
+  java_app:
+    container_name: java_app
+    image: demo-pokedex-rest-api:1.0.0
+    build: ./rest/pokedex
+    ports:
+      - "8080:8080"
+      
