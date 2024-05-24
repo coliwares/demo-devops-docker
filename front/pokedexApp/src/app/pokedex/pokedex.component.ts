@@ -17,7 +17,7 @@ export class PokedexComponent implements OnInit {
 
   searchPokemon() {
     crossOriginIsolated: false;
-    this.http.get(`http://localhost:8080/pokedex/getPokemon/${this.pokemonId}` )
+    this.http.get(`http://18.204.10.132:8080/pokedex/getPokemon/${this.pokemonId}` )
       .subscribe(data => {
         this.pokemon = data;
       });
